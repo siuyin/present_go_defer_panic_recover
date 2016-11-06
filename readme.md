@@ -1,1 +1,1 @@
-= Using defer, panic and recover in Go.
+# Using defer, panic and recover in Go.
