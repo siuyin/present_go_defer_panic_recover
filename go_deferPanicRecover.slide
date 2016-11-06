@@ -24,7 +24,7 @@ defer2/main.go:
 : Ask audience to predict sequence.
 
 * panic
-*panic* causes the executing function to scream for help!
+`panic` causes the executing function to scream for help!
 panic/main.go:
 .play -edit panic/main.go
 
@@ -33,7 +33,7 @@ If there is no one to help the panicking function to recover..., it dies!
 : Ask how does it dies.
 
 * recovering a panic in a deferred function
-We can  *recover* from a panic only in a *defer* ed function.
+We can  `recover` from a panic only in a `defer` ed function.
 panic2/main.go:
 .code panic2/main.go /010 OMIT/,/020 OMIT/
 .play -edit panic2/main.go /020 OMIT/,/030 OMIT/
@@ -41,7 +41,7 @@ panic2/main.go:
 : Point out the panicked function does not continue after panicking.
 
 * Full-reporting panicker
-When a function panics it drops what it is doing and yells out with type interface{}.
+When a function panics, it yells out a value of type `interface{}`.
 panic3/main.go:
 .code panic3/main.go /010 OMIT/,/020 OMIT/
 .code panic3/main.go /030 OMIT/,/040 OMIT/
