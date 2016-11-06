@@ -20,6 +20,7 @@ func main() {
 		fmt.Println("We have come to an end.")
 	}()
 	onlyPositive(1) // Try changing to -1
+	fmt.Println("After func call.")
 }
 
 //030 OMIT

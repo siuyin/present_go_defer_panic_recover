@@ -21,6 +21,7 @@ func onlyPositive(i int) {
 //020 OMIT
 func main() {
 	onlyPositive(1) // Try changing to -1
+	fmt.Println("After func call.")
 }
 
 //030 OMIT

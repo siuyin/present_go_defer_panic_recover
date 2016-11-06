@@ -31,6 +31,7 @@ panic/main.go:
 If there is no one to help the panicking function to recover..., it dies!
 
 : Ask if the main defer function will run.
+: If the panic is handled within the function, it is not escalated.
 
 * recovering a panic in a deferred function
 We can  `recover` from a panic only in a `defer` ed function.
@@ -38,13 +39,14 @@ panic2/main.go:
 .code panic2/main.go /010 OMIT/,/020 OMIT/
 .play -edit panic2/main.go /020 OMIT/,/030 OMIT/
 
-: Point out the panicked function does not continue after panicking.
+: Point out the rest of the panicked function does not continue.
 
 * Catching panics in main
 panic2a/main.go:
 .code panic2a/main.go /010 OMIT/,/020 OMIT/
 .play -edit panic2a/main.go /020 OMIT/,/030 OMIT/
 
+: Notice the after func print does not run after a panic. This is because the function has not handled the panic and the panic has escalated to main.
 
 * Full-reporting panicker
 When a function panics, it yells out a value of type `interface{}`.
