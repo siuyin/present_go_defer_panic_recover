@@ -30,7 +30,7 @@ panic/main.go:
 
 If there is no one to help the panicking function to recover..., it dies!
 
-: Ask how does it dies.
+: Ask if the main defer function will run.
 
 * recovering a panic in a deferred function
 We can  `recover` from a panic only in a `defer` ed function.
@@ -40,12 +40,38 @@ panic2/main.go:
 
 : Point out the panicked function does not continue after panicking.
 
+* Catching panics in main
+panic2a/main.go:
+.code panic2a/main.go /010 OMIT/,/020 OMIT/
+.play -edit panic2a/main.go /020 OMIT/,/030 OMIT/
+
+
 * Full-reporting panicker
 When a function panics, it yells out a value of type `interface{}`.
 panic3/main.go:
 .code panic3/main.go /010 OMIT/,/020 OMIT/
 .code panic3/main.go /030 OMIT/,/040 OMIT/
 .play -edit panic3/main.go /050 OMIT/,/060 OMIT/
+
+* When to use panic
+
+  if err != nil {
+    doSomething()
+  }
+
+vs
+
+  if conditionBad() {
+    panic(someValue)
+  }
+
+Use:
+
+*error*checks* if function knows how to handle the error.
+Execution can continue in function after handling the error.
+
+*panics* if function does not know what to do with the problem condition and has to report 'upstairs'.
+Remainder of function is not executed after a panic.
 
 * Source
 .link https://github.com/siuyin/present_go_defer_panic_recover
