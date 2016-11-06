@@ -46,3 +46,6 @@ panic3/main.go:
 .code panic3/main.go /010 OMIT/,/020 OMIT/
 .code panic3/main.go /030 OMIT/,/040 OMIT/
 .play -edit panic3/main.go /050 OMIT/,/060 OMIT/
+
+* Source
+.link https://github.com/siuyin/present_go_defer_panic_recover
